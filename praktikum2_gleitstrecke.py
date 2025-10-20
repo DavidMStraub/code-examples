@@ -12,6 +12,8 @@ def gleitstrecke_max(starthoehe_m, hoehenverlust_m_pro_km, hoehenreserve_m):
     Ausgabe: Gleitstrecke in km
     """
     nutzbare_hoehe_m = starthoehe_m - hoehenreserve_m
+    if nutzbare_hoehe_m <= 0:
+        return 0
     gleitstrecke_km = nutzbare_hoehe_m / hoehenverlust_m_pro_km
     return gleitstrecke_km
 
