@@ -52,10 +52,21 @@ def test_spiele_strategie():
     assert runden_1wurf > runden_3wuerfe
 
 
+def test_simuliere_strategie():
+    random.seed(42)
+    runden_liste = pig_funktionen.simuliere_strategie(
+        max_wuerfe=3,
+        ziel_punkte=100,
+        anzahl_spiele=1000
+    )
+    assert len(runden_liste) == 1000
+
+
 if __name__ == "__main__":
     test_wuerfle()
     test_spiele_runde()
     test_spiele_strategie()
+    test_simuliere_strategie()
 
     # wenn ein assert "auslöst", kommen wir nicht bei diesem print an
     print("Alle Tests erfolgreich.")
